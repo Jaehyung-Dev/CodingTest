@@ -1,0 +1,34 @@
+// 문제 : 아래와 같은 출력 결과 얻기
+        Spring is beginning
+        13
+        310
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        String msg = ;
+        int val1 = ;
+        String val2 = ;
+
+        System.out.println(msg);
+        System.out.println(val1 + 10);
+        System.out.println(val2 + "10");
+    }
+}
+
+// 풀이 : msg의 ""안에 출력할 문자열을 넣어주고, 
+// 두번째 결과값은 13이 되어야 하니 3으로 초기화, 
+// 세번째 결과값은 310이 되어야하고 문자열은 더하게 되면 두 값이 붙어서 출력되므로 "3"으로 초기화
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        String msg = "Spring is beginning";
+        int val1 = 3;
+        String val2 = "3";
+
+        System.out.println(msg);
+        System.out.println(val1 + 10);
+        System.out.println(val2 + "10");
+    }
+}
