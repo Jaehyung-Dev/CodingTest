@@ -1,0 +1,28 @@
+// 문제 : 두 정수 A와 B를 입력받은 다음, A/B를 출력하는 프로그램을 작성하시오.
+
+1.A와 B를 int로 받아서 print문에 찍으면 정수형태로 리턴이 되고 그러면 원하는 값(소수점)을 뽑을수가 없다.
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        System.out.println(A / B);
+    }
+}
+
+2.최종답 : double 형태로 A, B를 받아서 원하는 값(소수점)을 print
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double A = sc.nextInt();
+        double B = sc.nextInt();
+        if((A > 0 && A < 10) && (B > 0 && B < 10)) 
+        System.out.println(A / B);
+    }
+}
