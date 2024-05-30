@@ -1,0 +1,32 @@
+// 문제 : 총 4줄을 출력하는데 A와 B를 입력받아 B의 1의 자리수, 10의 자리수, 100의 자리수, B 를 각각 A와 곱해서 출력하면된다.  
+
+// 답1 : int값을 nextInt()로 받고 나면 enter값이 남아있어 아래 String B에서 nextLine()을 사용하면 입력한 문자가 아닌
+// enter값이 들어가게 되고 에러가 발생한다.
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        String B = sc.nextLine();
+        System.out.println(A * (B.charAt(2) - '0')); // A * B의 1의 자리수
+        System.out.println(A * (B.charAt(1) - '0')); // A * B의 10의 자리수
+        System.out.println(A * (B.charAt(0) - '0')); // A * B의 100의 자리수
+        System.out.println(A * Integer.parseInt(B));
+    }
+}
+
+// 해설 : charAt 함수를 이용해 String으로 받은 B의 값을 인덱스를 통해 1, 10, 100의 자리로 나눠주고 곱해주면 된다.
+// 이 때 주의할 점은 char형태의 숫자가 리턴되기 때문에 - '0'을 하여 정수형으로 변환 해줘야한다.
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        sc.nextLine();
+        String B = sc.nextLine();
+        System.out.println(A * (B.charAt(2) - '0')); // A * B의 1의 자리수
+        System.out.println(A * (B.charAt(1) - '0')); // A * B의 10의 자리수
+        System.out.println(A * (B.charAt(0) - '0')); // A * B의 100의 자리수
+        System.out.println(A * Integer.parseInt(B));
+    }
+}
