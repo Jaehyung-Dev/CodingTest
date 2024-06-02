@@ -1,0 +1,85 @@
+// 문제 : 시간과 분을 나타내는 정수를 두 개 받고 받은 시간에서 45분을 뺀 값을 출력
+첫째 줄에 두 정수 H와 M이 주어진다. (0 ≤ H ≤ 23, 0 ≤ M ≤ 59) 그리고 이것은 현재 상근이가 설정한 알람 시간 H시 M분을 의미한다.
+입력 시간은 24시간 표현을 사용한다. 24시간 표현에서 하루의 시작은 0:0(자정)이고, 끝은 23:59(다음날 자정 1분 전)이다. 시간을 나타낼 때, 불필요한 0은 사용하지 않는다.
+
+
+// 답 1 : BufferedReader 사용 -> 런타임 에러(NumberFormat) 발생
+// 이유는 BufferedReader는 String 값을 받기 때문에 받아온 String이 parseInt함수로 변환되지 못 하는 String일 경우 에러가 발생한다
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+public class Main{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int H = Integer.parseInt(br.readLine());
+        int M = Integer.parseInt(br.readLine());
+        if(M < 45){
+            H--;
+            M = M + 15;
+        } else {
+            M = M - 45;
+        }
+        System.out.println(H + " " + M);
+    }
+}
+
+// 답 2 : Scanner로 변경
+// 아래 코드는 시간이 0시 일 때 분이 45보다 커서 변경되면 -1이 출력되게 되는데 이 예외처리를 해주지 않았다.
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int H = sc.nextInt();
+        int M = sc.nextInt();
+        if(M < 45){
+            H--;
+            M = M + 15;
+        } else {
+            M = M - 45;
+        }
+        System.out.println(H + " " + M);
+    }
+}
+
+// 답 3 : H가 00일 때 조건 추가
+// 단순히 00일 때 24를 더해주면 되겠다 생각했는데, 0시는 출력이 가능하므로 0보다 작을 때로 조건을 바꿔야 했고
+// H가 0보다 작아지는 경우는 M - 45가 되었을 경우이므로 M < 45 의 조건절 안으로 빼줘야 했다. 
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int H = sc.nextInt();
+        int M = sc.nextInt();
+        if(H == 0) {
+            H = H + 24;
+        }
+        if(M < 45){
+            H--;
+            M = M + 15;
+        } else {
+            M = M - 45;
+        }
+        System.out.println(H + " " + M);
+    }
+}
+
+// 해답
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int H = sc.nextInt();
+        int M = sc.nextInt();
+        
+        if(M < 45){
+            H--;
+            M = M + 15;
+            if(H < 0) {
+                H = H + 24;
+            }
+        } else {
+            M = M - 45;
+        }
+        System.out.println(H + " " + M);
+    }
+}
