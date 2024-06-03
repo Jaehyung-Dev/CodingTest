@@ -1,0 +1,53 @@
+// 문제 : 첫째 줄에는 현재 시각이 나온다. 현재 시각은 시 A (0 ≤ A ≤ 23) 와 분 B (0 ≤ B ≤ 59)가 정수로 빈칸을 사이에 두고 
+// 순서대로 주어진다. 두 번째 줄에는 요리하는 데 필요한 시간 C (0 ≤ C ≤ 1,000)가 분 단위로 주어진다.
+
+// 답 1 : A(시간)의 값이 24보다 더 커질 수도 있기 때문에 A == 24의 조건은 부적합하다.
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+    	System.out.println("입력");
+    	int A = sc.nextInt();
+    	int B = sc.nextInt();
+    	int C = sc.nextInt();
+    		
+    	B += C;
+    	while(true) {
+    		if(B >= 60) {
+    			B -= 60;
+    			A++;
+    		}
+    		if(B < 60) {
+    			break;
+    		}
+    	}
+    	if(A == 24) {
+    		A = 0;
+    	}
+    	System.out.println(A + " " + B);
+    }
+}
+
+// 해설 : 먼저 받은 분 값 을 더해주고 더한 값이 60보다 크다면 반복문을 통해 60보다 작아질 때까지 더해주고 동시에 시간에 1을 더해준다.
+// 만약 B의 값이 60보다 작아지면 반복문을 종료하고 출력, 여기서 A의 값이 24보다 크다면 A에서 24를 빼준다.
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+    	Scanner sc = new Scanner(System.in);
+    	int A = sc.nextInt();
+    	int B = sc.nextInt();
+    	int C = sc.nextInt();
+    		
+    	B += C;
+    	while(B >= 60) {
+    		if(B >= 60) {
+    			B -= 60;
+    			A++;
+    		}
+    	}
+    	if(A >= 24) {
+    		A -= 24;
+    	}
+    	System.out.println(A + " " + B);
+    }
+}
