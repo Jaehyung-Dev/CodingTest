@@ -1,0 +1,21 @@
+// 문제 : 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성
+// 첫째 줄에 테스트 케이스의 개수 T가 주어지며, 각 테스트 케이스마다 A+B를 출력한다.
+
+// 해설 : 먼저 테스트 케이스 T를 받고, 반복문을 이용해 T의 케이스 만큼 A와 B를 입력받아 더한 값을 sum 배열에 차례로 넣어줬다.
+          마지막으로 향상된 for문을 이용해 배열의 순서대로 값을 출력하였다.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int[] sum = new int[T];
+        for(int i = 0; i < T; i++) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            sum[i] = A + B; 
+        }
+        for(int a : sum) {
+            System.out.println(a);
+        }
+    }
+}
