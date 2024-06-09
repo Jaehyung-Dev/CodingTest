@@ -1,0 +1,18 @@
+// 문제 : n이 주어졌을 때, 1부터 n까지 합을 구하는 프로그램을 작성하시오.
+
+// 해설 : 1부터 n까지 합을 구하는 문제로 for 조건식 초기값을 1로 설정하고 
+// 조건을 n보다 작거나 같을 때로 설정하면 i는 1부터 n까지 값을 돌게되고
+// 이 값을 변수에 더하기로 담아 출력하면 된다.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        for(int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        System.out.println(sum);    
+    }
+}
