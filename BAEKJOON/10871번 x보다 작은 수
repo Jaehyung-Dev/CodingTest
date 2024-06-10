@@ -1,0 +1,22 @@
+// 문제 : 정수 N개로 이루어진 수열 A와 정수 X가 주어진다. 이때, A에서 X보다 작은 수를 모두 출력하는 프로그램을 작성하시오.
+
+// 해설 : N개로 이뤄진 수열을 만들기위해 N을 받아서 정수형 배열에 길이로 설정하고 
+// 만들어진 배열에 값을 담아준 뒤
+// 인덱스로 값들을 뽑아 X의 값과 비교하여 X보다 작은 경우 출력
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int X = sc.nextInt();
+        int[] intArr = new int[N];
+        for(int i = 0; i < intArr.length; i++) {
+            intArr[i] = sc.nextInt();
+            }
+        for(int i = 0; i < intArr.length; i++) {
+            if(intArr[i] < X) {
+                System.out.print(intArr[i] + " ");
+            }
+        }
+	  }
+}
