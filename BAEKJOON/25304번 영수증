@@ -3,7 +3,10 @@
 이후 N개의 줄에는 각 물건의 가격 a와 개수 b가 공백을 사이에 두고 주어진다.
 구매한 물건의 가격과 개수로 계산한 총 금액이 영수증에 적힌 총 금액과 일치하면 Yes를 출력한다. 일치하지 않는다면 No를 출력한다.
 
-// 해설 : 
+// 해설 : 총금액 X 와 구매한 물건의 종류 수 N을 받고 
+// 물건 종류의 수 만큼 반복하여 물건의 값과 개수를 a와 b로 받고
+// 해당 종류의 합을 c에 a*b로 받아준다
+// 마지막으로 sum변수에 c를 더하고 그 값이 X와 같다면 Yes, 다르다면 No를 출력한다.
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
