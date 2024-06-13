@@ -1,0 +1,24 @@
+// 문제 : long int는 4바이트 정수까지 저장할 수 있는 정수 자료형이고 
+// long long int는 8바이트 정수까지 저장할 수 있는 정수 자료형
+// 첫 번째 줄에는 문제의 정수 N이 주어진다.
+// N바이트 정수까지 저장할 수 있다고 생각하는 정수 자료형의 이름을 출력하여라.
+
+// 해설 : 정수 N을 받고 long 하나당 4바이트이니 N을 4로 나눈 값을 하나 받아준다.
+// 마지막에 출력을 위한 String을 하나 만들어주고 N을 4로 나눈 값 만큼 반복문을 돌려
+// String에 long 값을 더해주고 결과 출력의 마지막에 int 값이 출력되어야 하니 마지막에 int를 더해준다.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int count = 0;
+        count = N / 4;
+        String strcount = "";
+        for(int i = 0; i < count; i++) {
+            strcount += "long ";
+        }
+        strcount += "int";
+        System.out.println(strcount);
+    }
+}
