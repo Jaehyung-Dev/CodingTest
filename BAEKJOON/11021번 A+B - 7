@@ -1,0 +1,33 @@
+// 문제 : 첫 줄에 테스트 케이스의 개수 T가 주어지고, 각 줄에 A와 B가 주어진다.
+// 각 테스트 케이스마다 "Case #x: "를 출력한 다음, A+B를 출력한다. 테스트 케이스 번호는 1부터 시작한다.
+
+// 해설 : 시간초과 예방을 위해 BufferReader를 사용하여 그에 따른 import와 예외처리를 했고
+// 테스트 케이스 T를 받고, 합을 담아서 출력할 sumArr 정수형 배열을 선언해줬다
+// 테스트 케이스 만큼의 for문을 돌려 문자열배열에 split함수를 사용해 공백 기준으로 문자를 잘라 넣어주고
+// 향상된 for문을 사용해 sumArr에 담아준다
+// 마지막으로 출력 케이스는 1부터 시작해야 하니 i의 값을 1로 초기화 하여 for문을 돌리고
+// 출력에 필요한 값들을 넣어주고 sumArr에서 i가 1부터 시작하여 인덱스와 일치시키기 위해 -1 해준다.
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int T = Integer.parseInt(br.readLine());
+		int[] sumArr = new int[T];
+		
+		for(int i = 0; i < T; i++) {
+			String[] stArr = br.readLine().split(" ");
+			
+			for (String stNum : stArr) {
+				sumArr[i] += Integer.parseInt(stNum);
+			}
+		}
+		for(int i = 1; i <= T; i++) {
+			System.out.println("Case #" + i + ": " + sumArr[i - 1]);
+		}
+	}
+}
