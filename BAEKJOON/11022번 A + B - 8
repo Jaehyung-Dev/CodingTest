@@ -1,0 +1,36 @@
+// 문제 : 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성
+// 첫째 줄에 테스트 케이스의 개수 T가 주어지고, 각 테스트 케이스마다 "Case #x: A + B = C" 형식으로 출력한다. 
+// x는 테스트 케이스 번호이고 1부터 시작하며, C는 A+B이다.
+
+// 해설 : 테스트케이스 T를 받아줄 변수와 A, B, 합 C를 받아줄 각 배열들을 선언하고
+// T크기의 반복문을 돌려 그 안에서 문자배열을 선언하고 공백을 기준으로 spilt 함수를 사용하여 입력받은 문자를 나눠 받아준다.
+// 나눠받은 문자에서 앞 문자(인덱스 0번)은 A의i번째에, 뒤 문자(인덱스 1번)는 B의i번째에 넣어주고, 그 합을 C의i번째에 담아준다.
+// 마지막으로 출력을 위한 for문을 하나 더 선언하여 출력해야 하는 형식에 맞춰 출력 하였다
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  
+		int T = Integer.parseInt(br.readLine());		
+		int[] A = new int[T];
+		int[] B = new int[T];	
+		int[] C = new int[T];
+		
+		for(int i = 0; i < T; i++) {
+			String[] stArr = br.readLine().split(" ");
+			
+			A[i] = Integer.parseInt(stArr[0]);
+			B[i] = Integer.parseInt(stArr[1]);
+			C[i] = A[i] + B[i];
+		}
+		
+		for(int i = 1; i <= T; i++) {
+			System.out.println("Case #" + i + ": " + A[i - 1] + " + " + B[i - 1] + " = " + C[i - 1]);
+		}
+	}
+}
