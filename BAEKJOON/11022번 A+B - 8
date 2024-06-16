@@ -7,10 +7,8 @@
 // 나눠받은 문자에서 앞 문자(인덱스 0번)은 A의i번째에, 뒤 문자(인덱스 1번)는 B의i번째에 넣어주고, 그 합을 C의i번째에 담아준다.
 // 마지막으로 출력을 위한 for문을 하나 더 선언하여 출력해야 하는 형식에 맞춰 출력 하였다
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
