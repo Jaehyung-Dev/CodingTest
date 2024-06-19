@@ -1,0 +1,22 @@
+// 문제 : 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+// 입력의 마지막에는 0 두 개가 들어온다.
+
+// 해설 : 정수형 변수 A와 B를 선언하여 입력 값을 담고 테스트케이스 제한이 없으므로
+// 무한반복문으로 감싸주고 입력의 마지막에 0 두 개가 들어온다는 조건을 A와 B가 0일 때 반복문 탈출시켰다. 
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			int A = sc.nextInt();
+			int B = sc.nextInt();
+			
+			if(A == 0 && B == 0) {
+				break;
+			}
+			System.out.println(A+B);
+		}
+		sc.close();
+	}
+}
