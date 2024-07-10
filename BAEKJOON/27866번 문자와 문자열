@@ -1,0 +1,15 @@
+// 문제 : 단어 S와 정수 i가 주어졌을 때, S의 i번째 글자를 출력하는 프로그램을 작성하시오.
+
+// 해설 : S와 번호 i를 받고 charAt 메소드를 이용해 받은 숫자 -1의 인덱스 값만 받아 출력
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String S = sc.nextLine();
+		int i = sc.nextInt();
+		char ch = S.charAt(i-1);
+		System.out.println(ch);
+ 	}
+}
