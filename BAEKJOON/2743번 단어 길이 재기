@@ -1,0 +1,13 @@
+문제 : 알파벳으로만 이루어진 단어를 입력받아, 그 길이를 출력하는 프로그램을 작성하시오.
+
+해설 : 문자열을 입력받아 length메소드로 받은 문자열의 길이를 출력했다.
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		System.out.println(s.length());
+ 	}
+}
