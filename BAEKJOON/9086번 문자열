@@ -1,0 +1,29 @@
+// 문제 : 문자열을 입력으로 주면 문자열의 첫 글자와 마지막 글자를 출력하는 프로그램을 작성하시오.
+// 입력의 첫 줄에는 테스트 케이스의 개수 T(1 ≤ T ≤ 10)가 주어진다. 각 테스트 케이스는 한 줄에 하나의 문자열이 주어진다. 
+
+// 해설 : 테스트 케이스 T와 받은 문자열을 저장할 배열, 첫 글자를 저장할 char배열, 마지막 글자를 저장할 char배열을 선언해주고
+// 반복문을 통해 문자 배열에 문자들을 입력받고 문자 배열의 0번 인덱스 값과 배열의 길이-1번째 인덱스 값(마지막 값)을 추출하여 각 char 배열에 담아주고
+// 반복문을 통해 값들을 출력
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		sc.nextLine();
+		String[] stArr = new String[T];
+		char[] chArr1 = new char[T];
+		char[] chArr2 = new char[T];
+
+		for(int i = 0; i < stArr.length; i++) {
+			stArr[i] = sc.nextLine();
+			chArr1[i] = stArr[i].charAt(0);
+			chArr2[i] = stArr[i].charAt(stArr[i].length()-1);
+		}
+
+		for(int i = 0; i < stArr.length; i++) {
+			System.out.print(chArr1[i]);
+			System.out.println(chArr2[i]);
+		}
+ 	}
+}
