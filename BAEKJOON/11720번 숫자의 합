@@ -1,0 +1,22 @@
+// 문제 : N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
+// 첫째 줄에 숫자의 개수 N이 주어진다. 둘째 줄에 숫자 N개가 공백없이 주어진다.
+
+// 해설 : 숫자의 개수 N을 받고, 공백없이 한 줄에서 N개의 숫자를 문자열로 받아준 뒤, sum변수를 선언
+// for문에서 숫자의 개수 만큼 반복문을 돌려 숫자 하나 하나를 출력해서 sum에 더해줬고 이를 출력했다.
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		sc.nextLine();
+		String str = sc.nextLine();
+		int sum = 0;
+		
+		for(int i = 0; i < N; i++) {
+			sum += Integer.parseInt(str.substring(i, i+1));	
+		}
+		System.out.println(sum);
+ 	}
+}
